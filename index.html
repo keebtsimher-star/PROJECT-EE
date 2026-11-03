@@ -431,6 +431,171 @@
       color: #56f59b;
     }
 
+/* =========================
+   PROJECTS
+   ========================= */
+
+.projects {
+  min-height: 100vh;
+  padding: 110px 8%;
+  border-top: 1px solid #1d3027;
+}
+
+.projects-header {
+  margin-bottom: 65px;
+}
+
+.projects-header h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(45px, 6vw, 80px);
+  letter-spacing: -3px;
+  margin-bottom: 20px;
+}
+
+.projects-header h2 span {
+  color: #56f59b;
+}
+
+.projects-intro {
+  max-width: 650px;
+  color: #718078;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  position: relative;
+  min-height: 390px;
+  padding: 32px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #1d3027;
+  background: rgba(9, 18, 14, 0.75);
+
+  transition:
+    transform 0.25s,
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: #56f59b;
+
+  box-shadow:
+    0 0 30px rgba(86, 245, 155, 0.07);
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 60px;
+}
+
+.project-number {
+  color: #53635a;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.project-status {
+  color: #56f59b;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.project-card h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  margin-bottom: 18px;
+}
+
+.project-description {
+  color: #718078;
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 500px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: auto;
+  padding-top: 35px;
+}
+
+.tag {
+  padding: 7px 10px;
+
+  border: 1px solid #294437;
+
+  color: #8da097;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 25px;
+
+  color: #56f59b;
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  text-decoration: none;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+
+/* EMPTY FUTURE PROJECT */
+
+.project-card.future {
+  border-style: dashed;
+  background: rgba(8, 12, 11, 0.4);
+}
+
+.project-card.future h3 {
+  color: #53635a;
+}
+
+.project-card.future .project-description {
+  color: #405249;
+}
+
+
+/* PROJECT MOBILE LAYOUT */
+
+@media (max-width: 850px) {
+
+  .projects {
+    padding: 80px 8%;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    min-height: 350px;
+  }
+
+}
+    
 
     /* =========================
        MOBILE
@@ -695,7 +860,145 @@
   <!-- =====================
        STATUS BAR
        ===================== -->
+<!-- =====================
+     PROJECTS
+     ===================== -->
 
+<section
+  class="projects"
+  id="projects"
+>
+
+  <div class="projects-header">
+
+    <p class="section-label">
+      02 / PROTOTYPE
+    </p>
+
+    <h2>
+      SELECTED
+      <span>PROJECTS.</span>
+    </h2>
+
+    <p class="projects-intro">
+      A growing collection of engineering,
+      programming, and technical projects documenting
+      what I'm building and learning.
+    </p>
+
+  </div>
+
+
+  <div class="project-grid">
+
+
+    <!-- PROJECT 001 -->
+
+    <article class="project-card">
+
+      <div class="project-top">
+
+        <span class="project-number">
+          PROJECT // 001
+        </span>
+
+        <span class="project-status">
+          ● IN PROGRESS
+        </span>
+
+      </div>
+
+
+      <h3>
+        Personal Engineering Portfolio
+      </h3>
+
+
+      <p class="project-description">
+        Designed and developed a responsive personal
+        engineering portfolio to document projects,
+        experience, achievements, and technical growth
+        throughout my electrical engineering education.
+      </p>
+
+
+      <div class="project-tags">
+
+        <span class="tag">
+          HTML
+        </span>
+
+        <span class="tag">
+          CSS
+        </span>
+
+        <span class="tag">
+          GITHUB
+        </span>
+
+        <span class="tag">
+          GITHUB PAGES
+        </span>
+
+      </div>
+
+
+      <a
+        class="project-link"
+        href="https://github.com/keebtsimher-star/PROJECT-EE"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        VIEW CODE ↗
+      </a>
+
+    </article>
+
+
+
+    <!-- FUTURE PROJECT -->
+
+    <article class="project-card future">
+
+      <div class="project-top">
+
+        <span class="project-number">
+          PROJECT // 002
+        </span>
+
+        <span class="project-number">
+          SIGNAL PENDING
+        </span>
+
+      </div>
+
+
+      <h3>
+        Next Project Loading...
+      </h3>
+
+
+      <p class="project-description">
+        This slot is reserved for the next engineering
+        project.
+      </p>
+
+
+      <div class="project-tags">
+
+        <span class="tag">
+          COMING SOON
+        </span>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+  
   <footer class="status-bar">
 
     <span>
