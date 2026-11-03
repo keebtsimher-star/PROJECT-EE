@@ -223,7 +223,7 @@
 
       margin-top: 32px;
 
-      color: #718078;
+      color: #80958a;
 
       font-size: 14px;
 
@@ -543,7 +543,7 @@
     .project-description {
       max-width: 500px;
 
-      color: #718078;
+      color: #80958a;
 
       font-size: 13px;
 
@@ -720,7 +720,7 @@
     .experience-description {
       max-width: 750px;
 
-      color: #718078;
+      color: #80958a;
 
       font-size: 13px;
 
@@ -751,6 +751,229 @@
     }
 
 
+    /* =====================================================
+   09. SYSTEM LOG / ACHIEVEMENTS
+   ===================================================== */
+
+.achievements {
+  min-height: 100vh;
+  padding: 110px 8%;
+  border-top: 1px solid #1d3027;
+}
+
+.achievements-header {
+  margin-bottom: 75px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 950px;
+  margin-top: 60px;
+}
+
+/* Main signal line */
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 110px;
+
+  width: 1px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #56f59b,
+      #315d47 75%,
+      #1d3027
+    );
+}
+
+
+/* Individual milestone */
+
+.timeline-item {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    80px 1fr;
+
+  gap: 70px;
+
+  min-height: 190px;
+  padding-bottom: 55px;
+}
+
+
+/* Year */
+
+.timeline-year {
+  padding-top: 2px;
+
+  color: #56f59b;
+
+  font-size: 11px;
+  letter-spacing: 2px;
+
+  text-align: right;
+}
+
+
+/* Glowing electrical node */
+
+.timeline-node {
+  position: absolute;
+
+  top: 3px;
+  left: 104px;
+
+  width: 13px;
+  height: 13px;
+
+  border: 2px solid #56f59b;
+  border-radius: 50%;
+
+  background: #080c0b;
+
+  box-shadow:
+    0 0 8px rgba(86, 245, 155, 0.7);
+
+  animation:
+    signalGlow 2.8s ease-in-out infinite;
+}
+
+
+/* Give each node a slightly different pulse time */
+
+.timeline-item:nth-child(2) .timeline-node {
+  animation-delay: 0.5s;
+}
+
+.timeline-item:nth-child(3) .timeline-node {
+  animation-delay: 1s;
+}
+
+
+/* Content */
+
+.timeline-content {
+  padding-bottom: 20px;
+}
+
+.timeline-code {
+  margin-bottom: 14px;
+
+  color: #53635a;
+
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.timeline-content h3 {
+  margin-bottom: 12px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 25px;
+}
+
+.timeline-content p {
+  max-width: 650px;
+
+  color: #80958a;
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+
+/* Pending milestone */
+
+.timeline-item.pending .timeline-node {
+  border-style: dashed;
+
+  border-color: #405249;
+
+  box-shadow: none;
+
+  animation: none;
+}
+
+.timeline-item.pending .timeline-year {
+  color: #405249;
+}
+
+.timeline-item.pending h3 {
+  color: #53635a;
+}
+
+.timeline-item.pending p {
+  color: #405249;
+}
+
+
+/* Subtle light pulse */
+
+@keyframes signalGlow {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 5px rgba(86, 245, 155, 0.35);
+
+    background: #080c0b;
+  }
+
+  50% {
+    box-shadow:
+      0 0 8px rgba(86, 245, 155, 0.8),
+      0 0 18px rgba(86, 245, 155, 0.18);
+
+    background: #102219;
+  }
+
+}
+
+
+/* SYSTEM LOG MOBILE */
+
+@media (max-width: 850px) {
+
+  .achievements {
+    padding: 80px 8%;
+  }
+
+  .timeline::before {
+    left: 6px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    padding-left: 40px;
+  }
+
+  .timeline-node {
+    left: 0;
+  }
+
+  .timeline-year {
+    text-align: left;
+  }
+
+}
+
+
+    
     /* =====================================================
        09. STATUS BAR / FOOTER
        ===================================================== */
@@ -1470,7 +1693,166 @@
 
   </section>
 
+<!-- =====================================================
+     04 / SYSTEM LOG
+     ===================================================== -->
 
+<section
+  class="achievements"
+  id="achievements"
+>
+
+  <div class="achievements-header">
+
+    <p class="section-label">
+      04 / SYSTEM LOG
+    </p>
+
+    <h2 class="section-heading">
+      ACHIEVEMENT
+      <span>LOG.</span>
+    </h2>
+
+    <p class="section-intro">
+      A running record of academic,
+      technical, and personal milestones
+      throughout my development as an engineer.
+    </p>
+
+  </div>
+
+
+  <div class="timeline">
+
+
+    <!-- LOG 001 -->
+
+    <article class="timeline-item">
+
+      <span class="timeline-node"></span>
+
+      <div class="timeline-year">
+        2025–2026
+      </div>
+
+      <div class="timeline-content">
+
+        <p class="timeline-code">
+          LOG // 001
+        </p>
+
+        <h3>
+          National Honor Society
+        </h3>
+
+        <p>
+          Participated in National Honor Society
+          during high school, representing a milestone
+          in academic achievement, service, and
+          involvement.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- LOG 002 -->
+
+    <article class="timeline-item">
+
+      <span class="timeline-node"></span>
+
+      <div class="timeline-year">
+        2026
+      </div>
+
+      <div class="timeline-content">
+
+        <p class="timeline-code">
+          LOG // 002
+        </p>
+
+        <h3>
+          Began Electrical Engineering
+        </h3>
+
+        <p>
+          Began studying Electrical Engineering
+          at the University of Minnesota Duluth,
+          starting the next stage of my engineering
+          education.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- LOG 003 -->
+
+    <article class="timeline-item">
+
+      <span class="timeline-node"></span>
+
+      <div class="timeline-year">
+        2026
+      </div>
+
+      <div class="timeline-content">
+
+        <p class="timeline-code">
+          LOG // 003
+        </p>
+
+        <h3>
+          Engineering Portfolio Launched
+        </h3>
+
+        <p>
+          Designed, built, and deployed a personal
+          engineering portfolio using HTML, CSS,
+          GitHub, and GitHub Pages to document my
+          technical development throughout college.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- FUTURE LOG -->
+
+    <article class="timeline-item pending">
+
+      <span class="timeline-node"></span>
+
+      <div class="timeline-year">
+        NEXT
+      </div>
+
+      <div class="timeline-content">
+
+        <p class="timeline-code">
+          LOG // 004
+        </p>
+
+        <h3>
+          Signal Pending...
+        </h3>
+
+        <p>
+          Next milestone awaiting transmission.
+        </p>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
 
   <!-- =====================================================
        STATUS BAR
