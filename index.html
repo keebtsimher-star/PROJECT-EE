@@ -115,3 +115,306 @@
     .title strong {
       color: white;
     }
+
+    .description {
+      margin-top: 35px;
+      max-width: 580px;
+      color: #718078;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+
+    /* BUTTONS */
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      border: 1px solid #315d47;
+      padding: 12px 18px;
+
+      color: #56f59b;
+      text-decoration: none;
+      font-size: 12px;
+
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: #56f59b;
+      color: #07100b;
+    }
+
+
+    /* CIRCUIT VISUAL */
+
+    .circuit-area {
+      position: relative;
+      height: 480px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .chip {
+      width: 230px;
+      height: 230px;
+
+      border: 2px solid #56f59b;
+      background: #0a1510;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+
+      box-shadow:
+        0 0 25px rgba(86, 245, 155, 0.1),
+        inset 0 0 35px rgba(86, 245, 155, 0.04);
+    }
+
+    .chip::before,
+    .chip::after {
+      content: "";
+      position: absolute;
+      background: #315d47;
+    }
+
+    .chip::before {
+      width: 420px;
+      height: 1px;
+      left: -95px;
+      top: 50%;
+    }
+
+    .chip::after {
+      width: 1px;
+      height: 420px;
+      left: 50%;
+      top: -95px;
+    }
+
+    .chip-content {
+      z-index: 2;
+      text-align: center;
+      background: #0a1510;
+      padding: 20px;
+    }
+
+    .chip-content .code {
+      color: #56f59b;
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    .chip-content h2 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 26px;
+      letter-spacing: 2px;
+    }
+
+    .chip-content p {
+      color: #65766d;
+      margin-top: 10px;
+      font-size: 11px;
+    }
+
+    .node {
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      background: #56f59b;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #56f59b;
+    }
+
+    .node-one {
+      left: 20px;
+      top: 50%;
+    }
+
+    .node-two {
+      right: 20px;
+      top: 50%;
+    }
+
+    .node-three {
+      left: 50%;
+      top: 20px;
+    }
+
+    .node-four {
+      left: 50%;
+      bottom: 20px;
+    }
+
+
+    /* BOTTOM STATUS */
+
+    .status {
+      border-top: 1px solid #1d3027;
+      padding: 18px 8%;
+
+      color: #53635a;
+      font-size: 11px;
+      letter-spacing: 1px;
+
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .online {
+      color: #56f59b;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 60px;
+      }
+
+      .circuit-area {
+        height: 400px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+        letter-spacing: -2px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <nav>
+
+    <div class="logo">
+      KH<span>//EE</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="#experience">EXPERIENCE</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+
+  </nav>
+
+
+  <main class="hero" id="about">
+
+    <section>
+
+      <p class="number">
+        01 / POWER ON
+      </p>
+
+      <h1>
+        KEEBTSIM<br>
+        <span>HER.</span>
+      </h1>
+
+      <p class="title">
+        <strong>Electrical Engineering Student</strong><br>
+        University of Minnesota Duluth
+      </p>
+
+      <p class="description">
+        I'm building my understanding of engineering through
+        electronics, programming, robotics, and hands-on projects.
+        This portfolio documents what I'm learning, building,
+        and accomplishing along the way.
+      </p>
+
+      <div class="buttons">
+
+        <a class="button"
+           href="https://github.com/keebtsimher-star"
+           target="_blank">
+          GITHUB ↗
+        </a>
+
+        <a class="button"
+           href="#projects">
+          VIEW PROJECTS ↓
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <section class="circuit-area">
+
+      <span class="node node-one"></span>
+      <span class="node node-two"></span>
+      <span class="node node-three"></span>
+      <span class="node node-four"></span>
+
+      <div class="chip">
+
+        <div class="chip-content">
+
+          <p class="code">
+            EE // 001
+          </p>
+
+          <h2>
+            ENGINEERING
+          </h2>
+
+          <p>
+            SIGNAL ACTIVE
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="status">
+
+    <span>
+      DULUTH, MN
+    </span>
+
+    <span class="online">
+      ● SYSTEM ONLINE
+    </span>
+
+    <span>
+      FOLLOW THE SIGNAL ↓
+    </span>
+
+  </footer>
+
+
+</body>
+
+</html>
