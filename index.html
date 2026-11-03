@@ -596,7 +596,171 @@
 
 }
     
+/* =========================
+   EXPERIENCE
+   ========================= */
 
+.experience {
+  min-he*ght: 100vh;
+  padding: 110px 8%;
+ *border-top: 1px solid #1d3027;
+}
+
+*experience-header {
+  margin-botto*: 65px;
+}
+
+.experience-header h2 {*  font-family: Arial, Helvetica, s*ns-serif;
+  font-size: clamp(45px,*6vw, 80px);
+  letter-spacing: -3px*
+  margin-bottom: 20px;
+}
+
+.experi*nce-header h2 span {
+  color: #*6f59b;
+}
+
+.experience-intro {
+  ma*-width: 650px;
+  color: #718078;
+ *font-size:*14px;
+  line-height: 1.8;
+}
+
+.expe*ience-grid {
+  display: grid;
+  gr*d-template-columns: repeat*2, 1fr);
+  gap: 20px;
+}
+
+.experien*e-card {
+  position: relative;
+  m*n-height: 350*x;
+
+  padding: 32px;
+
+  display:*flex;
+  flex-direction: column;
+
+ *border: 1px solid #1d3027;
+  backg*ound: rgba(9, 18* 14, 0.75);
+
+  transition:
+    tra*sform *.25s,
+    border-color 0.25s,
+   *box-shadow 0.25s;
+}
+
+.experience-c*rd:hover {
+ *transform: translateY(-5px);
+  bor*er-color: #56f59b;
+
+  box-shadow:
+*   0 0 30px*rgba(86, 245, 155, 0.07);
+}
+
+.expe*ience-card.featured {
+  grid-colum*: span 2;
+*
+
+.experience-top {
+  display: fle*;
+  justify-content: space-between*
+  align-items: center;
+
+  gap: 20*x;
+
+  margin-bottom: 45px;
+}
+
+.exp*rience*number {
+  color: #53635a;
+  font-*ize: 11px;
+  letter-spacing: 2px;
+*
+
+.experience-date*{
+  color: #56f59b;
+  font-size: *0px;
+  letter-spacing: 1px;
+  text*align: right;
+}
+
+.experience-card *3 {
+  font-family: Arial, Helvetic*,*sans-serif;
+  font-size: 26px;
+
+* margin-bottom: 8px;
+}
+
+.experienc*-company {
+  color* #56f59b;
+
+  font-size: 11px;
+* letter-spacing: 1px;
+
+  margin-bo*tom: 24px*
+}
+
+.experience-description {
+  co*or: #718078;
+
+  font-size: 13px;
+ *line-height: 1.8;
+
+  max-width: 75*px;
+}
+
+.experience-tags {
+* display: flex;
+  flex-wrap: wrap;*
+  gap: 8px;
+
+  margin-top: auto;
+* padding-top: 35*x;
+}
+
+.experience-tag {
+  padding:*7px 10px;
+
+  border: 1px solid #29*437;
+
+  color* #8da097;
+
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+
+/* EXPERIENCE MOBILE */
+
+@media (*ax-width: 850px) {
+
+  .experience *
+    padding: 80px 8%;
+  }
+
+  .exp*rience-grid {
+    grid-template-co*umns: 1fr;
+  }
+
+  .experience-card*featured {
+    grid-column: span 1*
+  }
+
+  .experience-top {
+    alig*-items: flex-start;
+    flex-direc*ion: column;
+  }
+
+  .experience-da*e {
+    text-align: left;
+  }
+
+}
+`*
+
+    
     /* =========================
        MOBILE
        ========================= */
