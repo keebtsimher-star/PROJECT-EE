@@ -1,5 +1,117 @@
-Hi, I'm Keebtsim.
-Electrical Engineering Student
-University of Minnesota Duluth
+<!DOCTYPE html>
+<html lang="en">
 
-I'm building this portfolio to document my engineering projects, experience, achievements, and growth.
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Keebtsim Her | Electrical Engineering</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #080c0b;
+      color: #e8eee9;
+      font-family: "Courier New", monospace;
+      min-height: 100vh;
+
+      background-image:
+        linear-gradient(rgba(72, 255, 156, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(72, 255, 156, 0.035) 1px, transparent 1px);
+
+      background-size: 40px 40px;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      width: 100%;
+      min-height: 78px;
+      padding: 20px 6%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      border-bottom: 1px solid #1d3027;
+    }
+
+    .logo {
+      color: #56f59b;
+      font-size: 17px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: #65766d;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #89968e;
+      text-decoration: none;
+      font-size: 13px;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #56f59b;
+    }
+
+
+    /* HERO */
+
+    .hero {
+      min-height: calc(100vh - 78px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 70px;
+
+      padding: 80px 8%;
+    }
+
+    .number {
+      color: #56f59b;
+      font-size: 13px;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(52px, 7vw, 105px);
+      line-height: 0.9;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #56f59b;
+    }
+
+    .title {
+      color: #a9b5ae;
+      font-size: 17px;
+      line-height: 1.8;
+      max-width: 600px;
+    }
+
+    .title strong {
+      color: white;
+    }
