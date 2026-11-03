@@ -1,1887 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="Keebtsim Her - Electrical Engineering student portfolio featuring engineering projects, experience, robotics, and technical growth."
-  >
-
+  <meta name="description" content="Keebtsim Her - Electrical Engineering student portfolio featuring engineering projects, experience, robotics, and technical growth.">
   <title>Keebtsim Her | Electrical Engineering</title>
-
   <style>
-
-    /* =====================================================
-       01. GLOBAL / BASIC PAGE SETUP
-       ===================================================== */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 78px; }
     body {
       min-height: 100vh;
-
       background-color: #080c0b;
-
       background-image:
-        linear-gradient(
-          rgba(86, 245, 155, 0.035) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(86, 245, 155, 0.035) 1px,
-          transparent 1px
-        );
-
+        linear-gradient(rgba(86,245,155,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(86,245,155,.035) 1px, transparent 1px);
       background-size: 40px 40px;
-
       color: #e8eee9;
-
-      font-family:
-        "Courier New",
-        Courier,
-        monospace;
+      font-family: "Courier New", Courier, monospace;
     }
-
-    a {
-      color: inherit;
-    }
-
-
-    /* =====================================================
-       02. NAVIGATION
-       ===================================================== */
+    a { color: inherit; }
 
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-
-      width: 100%;
-      min-height: 78px;
-
-      padding: 20px 6%;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
+      position: sticky; top: 0; z-index: 100;
+      width: 100%; min-height: 78px; padding: 20px 6%;
+      display: flex; align-items: center; justify-content: space-between;
       border-bottom: 1px solid #1d3027;
-
-      background: rgba(8, 12, 11, 0.92);
-
-      backdrop-filter: blur(10px);
+      background: rgba(8,12,11,.92); backdrop-filter: blur(10px);
     }
+    .logo { color: #56f59b; font-size: 17px; font-weight: bold; letter-spacing: 2px; }
+    .logo span { color: #65766d; }
+    .nav-links { display: flex; gap: 25px; list-style: none; }
+    .nav-links a { color: #89968e; text-decoration: none; font-size: 11px; letter-spacing: 1px; transition: color .2s; }
+    .nav-links a:hover { color: #56f59b; }
 
-    .logo {
-      color: #56f59b;
-
-      font-size: 17px;
-      font-weight: bold;
-
-      letter-spacing: 2px;
-    }
-
-    .logo span {
-      color: #65766d;
-    }
-
-    .nav-links {
-      display: flex;
-
-      gap: 30px;
-
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #89968e;
-
-      text-decoration: none;
-
-      font-size: 12px;
-
-      letter-spacing: 1px;
-
-      transition:
-        color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: #56f59b;
-    }
-
-
-    /* =====================================================
-       03. SHARED SECTION STYLES
-       ===================================================== */
-
-    .section-label {
-      margin-bottom: 25px;
-
-      color: #56f59b;
-
-      font-size: 12px;
-
-      letter-spacing: 2px;
-    }
-
-    .section-heading {
-      margin-bottom: 20px;
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: clamp(45px, 6vw, 80px);
-
-      letter-spacing: -3px;
-    }
-
-    .section-heading span {
-      color: #56f59b;
-    }
-
-    .section-intro {
-      max-width: 650px;
-
-      color: #718078;
-
-      font-size: 14px;
-
-      line-height: 1.8;
-    }
-
-
-    /* =====================================================
-       04. HERO / LANDING PAGE
-       ===================================================== */
+    .section-label { margin-bottom: 25px; color: #56f59b; font-size: 12px; letter-spacing: 2px; }
+    .section-heading { margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif; font-size: clamp(45px,6vw,80px); letter-spacing: -3px; }
+    .section-heading span { color: #56f59b; }
+    .section-intro { max-width: 650px; color: #80958a; font-size: 14px; line-height: 1.8; }
 
     .hero {
-      width: 100%;
+      width: 100%; min-height: calc(100vh - 78px); padding: 70px 8%;
+      display: grid; grid-template-columns: minmax(0,1.15fr) minmax(350px,.85fr);
+      align-items: center; gap: 70px;
+    }
+    .hero h1 { margin-bottom: 26px; font-family: Arial, Helvetica, sans-serif; font-size: clamp(55px,7vw,105px); line-height: .88; letter-spacing: -5px; }
+    .hero h1 span { color: #56f59b; }
+    .degree { color: #a9b5ae; font-size: 16px; line-height: 1.8; }
+    .degree strong { color: #fff; }
+    .description { max-width: 600px; margin-top: 32px; color: #80958a; font-size: 14px; line-height: 1.9; }
+    .buttons { margin-top: 35px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .button { display: inline-block; padding: 12px 18px; border: 1px solid #315d47; color: #56f59b; text-decoration: none; font-size: 12px; letter-spacing: 1px; transition: .2s; }
+    .button:hover { background: #56f59b; color: #07100b; transform: translateY(-2px); box-shadow: 0 0 20px rgba(86,245,155,.12); }
 
-      min-height: calc(100vh - 78px);
+    .circuit-area { position: relative; width: 100%; height: 500px; display: flex; align-items: center; justify-content: center; }
+    .wire-horizontal { position: absolute; width: 90%; height: 1px; background: #315d47; }
+    .wire-vertical { position: absolute; width: 1px; height: 90%; background: #315d47; }
+    .chip { position: relative; z-index: 3; width: 230px; height: 230px; display: flex; align-items: center; justify-content: center; border: 2px solid #56f59b; background: #0a1510; box-shadow: 0 0 30px rgba(86,245,155,.12), inset 0 0 40px rgba(86,245,155,.04); }
+    .chip::before { content: ""; position: absolute; width: 260px; height: 260px; border: 1px dashed rgba(86,245,155,.22); }
+    .chip-content { z-index: 5; text-align: center; }
+    .chip-code { margin-bottom: 15px; color: #56f59b; font-size: 11px; letter-spacing: 2px; }
+    .chip h2 { font-family: Arial, Helvetica, sans-serif; font-size: 24px; letter-spacing: 2px; }
+    .chip-status { margin-top: 12px; color: #65766d; font-size: 10px; letter-spacing: 2px; }
+    .node { position: absolute; z-index: 4; width: 9px; height: 9px; border-radius: 50%; background: #56f59b; box-shadow: 0 0 12px #56f59b; }
+    .node-left { left: 5%; top: 50%; } .node-right { right: 5%; top: 50%; }
+    .node-top { left: 50%; top: 5%; } .node-bottom { left: 50%; bottom: 5%; }
+    .circuit-label { position: absolute; color: #405249; font-size: 9px; letter-spacing: 1px; }
+    .label-one { top: 43%; left: 5%; } .label-two { top: 43%; right: 5%; } .label-three { top: 5%; left: 52%; }
 
-      padding: 70px 8%;
+    .projects, .experience, .achievements, .skills { min-height: 100vh; padding: 110px 8%; border-top: 1px solid #1d3027; }
+    .projects-header, .experience-header, .skills-header { margin-bottom: 65px; }
+    .project-grid, .experience-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+    .project-card, .experience-card, .component-card {
+      position: relative; padding: 32px; display: flex; flex-direction: column;
+      border: 1px solid #1d3027; background: rgba(9,18,14,.75);
+      transition: transform .25s, border-color .25s, box-shadow .25s;
+    }
+    .project-card { min-height: 390px; } .experience-card { min-height: 350px; }
+    .project-card:hover, .experience-card:hover, .component-card:hover { transform: translateY(-5px); border-color: #56f59b; box-shadow: 0 0 30px rgba(86,245,155,.07); }
+    .project-top, .experience-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .project-top { margin-bottom: 60px; } .experience-top { margin-bottom: 45px; }
+    .project-number, .experience-number { color: #53635a; font-size: 11px; letter-spacing: 2px; }
+    .project-status, .experience-date { color: #56f59b; font-size: 10px; letter-spacing: 1px; }
+    .project-card h3, .experience-card h3 { font-family: Arial, Helvetica, sans-serif; font-size: 26px; }
+    .project-card h3 { margin-bottom: 18px; } .experience-card h3 { margin-bottom: 8px; }
+    .project-description, .experience-description { color: #80958a; font-size: 13px; line-height: 1.8; }
+    .project-description { max-width: 500px; } .experience-description { max-width: 750px; }
+    .project-tags, .experience-tags { margin-top: auto; padding-top: 35px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag, .experience-tag { padding: 7px 10px; border: 1px solid #294437; color: #8da097; font-size: 9px; letter-spacing: 1px; }
+    .project-link { display: inline-block; margin-top: 25px; color: #56f59b; text-decoration: none; font-size: 11px; letter-spacing: 1px; }
+    .project-link:hover { text-decoration: underline; }
+    .project-card.future { border-style: dashed; background: rgba(8,12,11,.4); }
+    .project-card.future h3 { color: #53635a; }
+    .project-card.future .project-description { color: #405249; }
+    .experience-card.featured { grid-column: span 2; }
+    .experience-company { margin-bottom: 24px; color: #56f59b; font-size: 11px; letter-spacing: 1px; }
 
-      display: grid;
-
-      grid-template-columns:
-        minmax(0, 1.15fr)
-        minmax(350px, 0.85fr);
-
-      align-items: center;
-
-      gap: 70px;
+    .achievements-header { margin-bottom: 75px; }
+    .timeline { position: relative; max-width: 950px; margin-top: 60px; }
+    .timeline::before { content: ""; position: absolute; top: 0; bottom: 0; left: 110px; width: 1px; background: linear-gradient(to bottom,#56f59b,#315d47 75%,#1d3027); }
+    .timeline-item { position: relative; display: grid; grid-template-columns: 80px 1fr; gap: 70px; min-height: 190px; padding-bottom: 55px; }
+    .timeline-year { padding-top: 2px; color: #56f59b; font-size: 11px; letter-spacing: 2px; text-align: right; }
+    .timeline-node { position: absolute; top: 3px; left: 104px; width: 13px; height: 13px; border: 2px solid #56f59b; border-radius: 50%; background: #080c0b; box-shadow: 0 0 8px rgba(86,245,155,.7); animation: signalGlow 2.8s ease-in-out infinite; }
+    .timeline-item:nth-child(2) .timeline-node { animation-delay: .5s; }
+    .timeline-item:nth-child(3) .timeline-node { animation-delay: 1s; }
+    .timeline-code { margin-bottom: 14px; color: #53635a; font-size: 10px; letter-spacing: 2px; }
+    .timeline-content h3 { margin-bottom: 12px; font-family: Arial, Helvetica, sans-serif; font-size: 25px; }
+    .timeline-content p { max-width: 650px; color: #80958a; font-size: 13px; line-height: 1.8; }
+    .timeline-item.pending .timeline-node { border-style: dashed; border-color: #405249; box-shadow: none; animation: none; }
+    .timeline-item.pending .timeline-year, .timeline-item.pending p { color: #405249; }
+    .timeline-item.pending h3 { color: #53635a; }
+    @keyframes signalGlow {
+      0%,100% { box-shadow: 0 0 5px rgba(86,245,155,.35); background: #080c0b; }
+      50% { box-shadow: 0 0 8px rgba(86,245,155,.8), 0 0 18px rgba(86,245,155,.18); background: #102219; }
     }
 
-    .hero h1 {
-      margin-bottom: 26px;
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: clamp(55px, 7vw, 105px);
-
-      line-height: 0.88;
-
-      letter-spacing: -5px;
-    }
-
-    .hero h1 span {
-      color: #56f59b;
-    }
-
-    .degree {
-      color: #a9b5ae;
-
-      font-size: 16px;
-
-      line-height: 1.8;
-    }
-
-    .degree strong {
-      color: #ffffff;
-    }
-
-    .description {
-      max-width: 600px;
-
-      margin-top: 32px;
-
-      color: #80958a;
-
-      font-size: 14px;
-
-      line-height: 1.9;
-    }
-
-
-    /* =====================================================
-       05. BUTTONS
-       ===================================================== */
-
-    .buttons {
-      margin-top: 35px;
-
-      display: flex;
-      flex-wrap: wrap;
-
-      gap: 12px;
-    }
-
-    .button {
-      display: inline-block;
-
-      padding: 12px 18px;
-
-      border: 1px solid #315d47;
-
-      color: #56f59b;
-
-      text-decoration: none;
-
-      font-size: 12px;
-
-      letter-spacing: 1px;
-
-      transition:
-        color 0.2s,
-        background 0.2s,
-        transform 0.2s,
-        box-shadow 0.2s;
-    }
-
-    .button:hover {
-      background: #56f59b;
-
-      color: #07100b;
-
-      transform: translateY(-2px);
-
-      box-shadow:
-        0 0 20px rgba(86, 245, 155, 0.12);
-    }
-
-
-    /* =====================================================
-       06. CIRCUIT / PROCESSOR GRAPHIC
-       ===================================================== */
-
-    .circuit-area {
-      position: relative;
-
-      width: 100%;
-      height: 500px;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-    }
-
-    .wire-horizontal {
-      position: absolute;
-
-      width: 90%;
-      height: 1px;
-
-      background: #315d47;
-    }
-
-    .wire-vertical {
-      position: absolute;
-
-      width: 1px;
-      height: 90%;
-
-      background: #315d47;
-    }
-
-    .chip {
-      position: relative;
-
-      z-index: 3;
-
-      width: 230px;
-      height: 230px;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      border: 2px solid #56f59b;
-
-      background: #0a1510;
-
-      box-shadow:
-        0 0 30px rgba(86, 245, 155, 0.12),
-        inset 0 0 40px rgba(86, 245, 155, 0.04);
-    }
-
-    .chip::before {
-      content: "";
-
-      position: absolute;
-
-      width: 260px;
-      height: 260px;
-
-      border:
-        1px dashed
-        rgba(86, 245, 155, 0.22);
-    }
-
-    .chip-content {
-      z-index: 5;
-
-      text-align: center;
-    }
-
-    .chip-code {
-      margin-bottom: 15px;
-
-      color: #56f59b;
-
-      font-size: 11px;
-
-      letter-spacing: 2px;
-    }
-
-    .chip h2 {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 24px;
-
-      letter-spacing: 2px;
-    }
-
-    .chip-status {
-      margin-top: 12px;
-
-      color: #65766d;
-
-      font-size: 10px;
-
-      letter-spacing: 2px;
-    }
-
-    .node {
-      position: absolute;
-
-      z-index: 4;
-
-      width: 9px;
-      height: 9px;
-
-      border-radius: 50%;
-
-      background: #56f59b;
-
-      box-shadow:
-        0 0 12px #56f59b;
-    }
-
-    .node-left {
-      left: 5%;
-      top: 50%;
-    }
-
-    .node-right {
-      right: 5%;
-      top: 50%;
-    }
-
-    .node-top {
-      left: 50%;
-      top: 5%;
-    }
-
-    .node-bottom {
-      left: 50%;
-      bottom: 5%;
-    }
-
-    .circuit-label {
-      position: absolute;
-
-      color: #405249;
-
-      font-size: 9px;
-
-      letter-spacing: 1px;
-    }
-
-    .label-one {
-      top: 43%;
-      left: 5%;
-    }
-
-    .label-two {
-      top: 43%;
-      right: 5%;
-    }
-
-    .label-three {
-      top: 5%;
-      left: 52%;
-    }
-
-
-    /* =====================================================
-       07. PROJECTS
-       ===================================================== */
-
-    .projects {
-      min-height: 100vh;
-
-      padding: 110px 8%;
-
-      border-top: 1px solid #1d3027;
-    }
-
-    .projects-header {
-      margin-bottom: 65px;
-    }
-
-    .project-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 20px;
-    }
-
-    .project-card {
-      position: relative;
-
-      min-height: 390px;
-
-      padding: 32px;
-
-      display: flex;
-      flex-direction: column;
-
-      border: 1px solid #1d3027;
-
-      background:
-        rgba(9, 18, 14, 0.75);
-
-      transition:
-        transform 0.25s,
-        border-color 0.25s,
-        box-shadow 0.25s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-
-      border-color: #56f59b;
-
-      box-shadow:
-        0 0 30px
-        rgba(86, 245, 155, 0.07);
-    }
-
-    .project-top {
-      margin-bottom: 60px;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 20px;
-    }
-
-    .project-number {
-      color: #53635a;
-
-      font-size: 11px;
-
-      letter-spacing: 2px;
-    }
-
-    .project-status {
-      color: #56f59b;
-
-      font-size: 10px;
-
-      letter-spacing: 1px;
-    }
-
-    .project-card h3 {
-      margin-bottom: 18px;
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 26px;
-    }
-
-    .project-description {
-      max-width: 500px;
-
-      color: #80958a;
-
-      font-size: 13px;
-
-      line-height: 1.8;
-    }
-
-    .project-tags {
-      margin-top: auto;
-
-      padding-top: 35px;
-
-      display: flex;
-      flex-wrap: wrap;
-
-      gap: 8px;
-    }
-
-    .tag {
-      padding: 7px 10px;
-
-      border: 1px solid #294437;
-
-      color: #8da097;
-
-      font-size: 9px;
-
-      letter-spacing: 1px;
-    }
-
-    .project-link {
-      display: inline-block;
-
-      margin-top: 25px;
-
-      color: #56f59b;
-
-      text-decoration: none;
-
-      font-size: 11px;
-
-      letter-spacing: 1px;
-    }
-
-    .project-link:hover {
-      text-decoration: underline;
-    }
-
-    .project-card.future {
-      border-style: dashed;
-
-      background:
-        rgba(8, 12, 11, 0.4);
-    }
-
-    .project-card.future h3 {
-      color: #53635a;
-    }
-
-    .project-card.future .project-description {
-      color: #405249;
-    }
-
-
-    /* =====================================================
-       08. EXPERIENCE
-       ===================================================== */
-
-    .experience {
-      min-height: 100vh;
-
-      padding: 110px 8%;
-
-      border-top: 1px solid #1d3027;
-    }
-
-    .experience-header {
-      margin-bottom: 65px;
-    }
-
-    .experience-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 20px;
-    }
-
-    .experience-card {
-      position: relative;
-
-      min-height: 350px;
-
-      padding: 32px;
-
-      display: flex;
-      flex-direction: column;
-
-      border: 1px solid #1d3027;
-
-      background:
-        rgba(9, 18, 14, 0.75);
-
-      transition:
-        transform 0.25s,
-        border-color 0.25s,
-        box-shadow 0.25s;
-    }
-
-    .experience-card:hover {
-      transform: translateY(-5px);
-
-      border-color: #56f59b;
-
-      box-shadow:
-        0 0 30px
-        rgba(86, 245, 155, 0.07);
-    }
-
-    .experience-card.featured {
-      grid-column: span 2;
-    }
-
-    .experience-top {
-      margin-bottom: 45px;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 20px;
-    }
-
-    .experience-number {
-      color: #53635a;
-
-      font-size: 11px;
-
-      letter-spacing: 2px;
-    }
-
-    .experience-date {
-      color: #56f59b;
-
-      font-size: 10px;
-
-      letter-spacing: 1px;
-
-      text-align: right;
-    }
-
-    .experience-card h3 {
-      margin-bottom: 8px;
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 26px;
-    }
-
-    .experience-company {
-      margin-bottom: 24px;
-
-      color: #56f59b;
-
-      font-size: 11px;
-
-      letter-spacing: 1px;
-    }
-
-    .experience-description {
-      max-width: 750px;
-
-      color: #80958a;
-
-      font-size: 13px;
-
-      line-height: 1.8;
-    }
-
-    .experience-tags {
-      margin-top: auto;
-
-      padding-top: 35px;
-
-      display: flex;
-      flex-wrap: wrap;
-
-      gap: 8px;
-    }
-
-    .experience-tag {
-      padding: 7px 10px;
-
-      border: 1px solid #294437;
-
-      color: #8da097;
-
-      font-size: 9px;
-
-      letter-spacing: 1px;
-    }
-
-
-    /* =====================================================
-   09. SYSTEM LOG / ACHIEVEMENTS
-   ===================================================== */
-
-.achievements {
-  min-height: 100vh;
-  padding: 110px 8%;
-  border-top: 1px solid #1d3027;
-}
-
-.achievements-header {
-  margin-bottom: 75px;
-}
-
-.timeline {
-  position: relative;
-  max-width: 950px;
-  margin-top: 60px;
-}
-
-/* Main signal line */
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 110px;
-
-  width: 1px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      #56f59b,
-      #315d47 75%,
-      #1d3027
-    );
-}
-
-
-/* Individual milestone */
-
-.timeline-item {
-  position: relative;
-
-  display: grid;
-
-  grid-template-columns:
-    80px 1fr;
-
-  gap: 70px;
-
-  min-height: 190px;
-  padding-bottom: 55px;
-}
-
-
-/* Year */
-
-.timeline-year {
-  padding-top: 2px;
-
-  color: #56f59b;
-
-  font-size: 11px;
-  letter-spacing: 2px;
-
-  text-align: right;
-}
-
-
-/* Glowing electrical node */
-
-.timeline-node {
-  position: absolute;
-
-  top: 3px;
-  left: 104px;
-
-  width: 13px;
-  height: 13px;
-
-  border: 2px solid #56f59b;
-  border-radius: 50%;
-
-  background: #080c0b;
-
-  box-shadow:
-    0 0 8px rgba(86, 245, 155, 0.7);
-
-  animation:
-    signalGlow 2.8s ease-in-out infinite;
-}
-
-
-/* Give each node a slightly different pulse time */
-
-.timeline-item:nth-child(2) .timeline-node {
-  animation-delay: 0.5s;
-}
-
-.timeline-item:nth-child(3) .timeline-node {
-  animation-delay: 1s;
-}
-
-
-/* Content */
-
-.timeline-content {
-  padding-bottom: 20px;
-}
-
-.timeline-code {
-  margin-bottom: 14px;
-
-  color: #53635a;
-
-  font-size: 10px;
-  letter-spacing: 2px;
-}
-
-.timeline-content h3 {
-  margin-bottom: 12px;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  font-size: 25px;
-}
-
-.timeline-content p {
-  max-width: 650px;
-
-  color: #80958a;
-
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-
-/* Pending milestone */
-
-.timeline-item.pending .timeline-node {
-  border-style: dashed;
-
-  border-color: #405249;
-
-  box-shadow: none;
-
-  animation: none;
-}
-
-.timeline-item.pending .timeline-year {
-  color: #405249;
-}
-
-.timeline-item.pending h3 {
-  color: #53635a;
-}
-
-.timeline-item.pending p {
-  color: #405249;
-}
-
-
-/* Subtle light pulse */
-
-@keyframes signalGlow {
-
-  0%,
-  100% {
-    box-shadow:
-      0 0 5px rgba(86, 245, 155, 0.35);
-
-    background: #080c0b;
-  }
-
-  50% {
-    box-shadow:
-      0 0 8px rgba(86, 245, 155, 0.8),
-      0 0 18px rgba(86, 245, 155, 0.18);
-
-    background: #102219;
-  }
-
-}
-
-
-/* SYSTEM LOG MOBILE */
-
-@media (max-width: 850px) {
-
-  .achievements {
-    padding: 80px 8%;
-  }
-
-  .timeline::before {
-    left: 6px;
-  }
-
-  .timeline-item {
-    grid-template-columns: 1fr;
-
-    gap: 12px;
-
-    padding-left: 40px;
-  }
-
-  .timeline-node {
-    left: 0;
-  }
-
-  .timeline-year {
-    text-align: left;
-  }
-
-}
-
-
-    
-    /* =====================================================
-       09. STATUS BAR / FOOTER
-       ===================================================== */
-
-    .status-bar {
-      width: 100%;
-
-      padding: 18px 8%;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 20px;
-
-      border-top: 1px solid #1d3027;
-
-      color: #53635a;
-
-      font-size: 10px;
-
-      letter-spacing: 1px;
-    }
-
-    .online {
-      color: #56f59b;
-    }
-
-
-    /* =====================================================
-       10. RESPONSIVE / MOBILE
-       ===================================================== */
-
+    .component-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .component-card { min-height: 290px; padding: 30px; }
+    .component-number { margin-bottom: 45px; color: #53635a; font-size: 10px; letter-spacing: 2px; }
+    .component-card h3 { margin-bottom: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 23px; }
+    .component-category { margin-bottom: 25px; color: #56f59b; font-size: 10px; letter-spacing: 1px; }
+    .component-description { color: #80958a; font-size: 12px; line-height: 1.8; }
+    .component-signal { margin-top: auto; padding-top: 30px; display: flex; align-items: center; gap: 10px; color: #53635a; font-size: 9px; letter-spacing: 1px; }
+    .component-light { width: 7px; height: 7px; border-radius: 50%; background: #56f59b; box-shadow: 0 0 8px rgba(86,245,155,.65); }
+
+    .status-bar { width: 100%; padding: 18px 8%; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid #1d3027; color: #53635a; font-size: 10px; letter-spacing: 1px; }
+    .online { color: #56f59b; }
+
+    @media (max-width: 1000px) { .component-grid { grid-template-columns: repeat(2,1fr); } }
     @media (max-width: 850px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-
-        padding:
-          60px
-          8%
-          20px;
-      }
-
-      .hero h1 {
-        font-size: 60px;
-
-        letter-spacing: -3px;
-      }
-
-      .circuit-area {
-        height: 400px;
-      }
-
-      .chip {
-        width: 190px;
-        height: 190px;
-      }
-
-      .chip::before {
-        width: 215px;
-        height: 215px;
-      }
-
-      .projects,
-      .experience {
-        padding:
-          80px
-          8%;
-      }
-
-      .project-grid,
-      .experience-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card {
-        min-height: 350px;
-      }
-
-      .experience-card.featured {
-        grid-column: span 1;
-      }
-
-      .experience-top,
-      .project-top {
-        align-items: flex-start;
-
-        flex-direction: column;
-      }
-
-      .experience-date {
-        text-align: left;
-      }
-
-      .status-bar {
-        flex-direction: column;
-
-        text-align: center;
-      }
-
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 60px 8% 20px; }
+      .hero h1 { font-size: 60px; letter-spacing: -3px; }
+      .circuit-area { height: 400px; }
+      .chip { width: 190px; height: 190px; }
+      .chip::before { width: 215px; height: 215px; }
+      .projects, .experience, .achievements, .skills { padding: 80px 8%; }
+      .project-grid, .experience-grid { grid-template-columns: 1fr; }
+      .experience-card.featured { grid-column: span 1; }
+      .project-top, .experience-top { align-items: flex-start; flex-direction: column; }
+      .timeline::before { left: 6px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 12px; padding-left: 40px; }
+      .timeline-node { left: 0; }
+      .timeline-year, .experience-date { text-align: left; }
+      .status-bar { flex-direction: column; text-align: center; }
     }
-
-
+    @media (max-width: 650px) { .component-grid { grid-template-columns: 1fr; } }
     @media (max-width: 500px) {
-
-      nav {
-        padding:
-          18px
-          6%;
-      }
-
-      .hero {
-        padding-left: 6%;
-        padding-right: 6%;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-
-        letter-spacing: -2px;
-      }
-
-      .projects,
-      .experience {
-        padding-left: 6%;
-        padding-right: 6%;
-      }
-
-      .project-card,
-      .experience-card {
-        padding: 24px;
-      }
-
-      .section-heading {
-        font-size: 42px;
-
-        letter-spacing: -2px;
-      }
-
+      nav { padding: 18px 6%; }
+      .hero, .projects, .experience, .achievements, .skills { padding-left: 6%; padding-right: 6%; }
+      .hero h1 { font-size: 48px; letter-spacing: -2px; }
+      .project-card, .experience-card, .component-card { padding: 24px; }
+      .section-heading { font-size: 42px; letter-spacing: -2px; }
     }
-
   </style>
 </head>
-
-
 <body>
-
-
-  <!-- =====================================================
-       NAVIGATION
-       ===================================================== -->
-
   <nav>
-
-    <div class="logo">
-      KH<span>//EE</span>
-    </div>
-
-
+    <div class="logo">KH<span>//EE</span></div>
     <ul class="nav-links">
-
-      <li>
-        <a href="#about">
-          ABOUT
-        </a>
-      </li>
-
-      <li>
-        <a href="#projects">
-          PROJECTS
-        </a>
-      </li>
-
-      <li>
-        <a href="#experience">
-          EXPERIENCE
-        </a>
-      </li>
-<li>
-  <a href="#achievements">
-    SYSTEM LOG
-  </a>
-</li>
-      <li>
-        <a href="#contact">
-          CONTACT
-        </a>
-      </li>
-
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="#experience">EXPERIENCE</a></li>
+      <li><a href="#achievements">SYSTEM LOG</a></li>
+      <li><a href="#skills">COMPONENTS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
     </ul>
-
   </nav>
 
-
-
-  <!-- =====================================================
-       01 / HERO
-       ===================================================== -->
-
-  <main
-    class="hero"
-    id="about"
-  >
-
-
-    <!-- HERO TEXT -->
-
+  <main class="hero" id="about">
     <section>
-
-      <p class="section-label">
-        01 / POWER ON
-      </p>
-
-
-      <h1>
-        KEEBTSIM
-        <br>
-        <span>HER.</span>
-      </h1>
-
-
-      <p class="degree">
-
-        <strong>
-          Electrical Engineering Student
-        </strong>
-
-        <br>
-
-        University of Minnesota Duluth
-
-      </p>
-
-
-      <p class="description">
-
-        I'm building my understanding of engineering
-        through electronics, programming, robotics,
-        and hands-on projects.
-
-        <br><br>
-
-        This portfolio documents what I'm learning,
-        building, and accomplishing as I develop
-        as an engineer.
-
-      </p>
-
-
+      <p class="section-label">01 / POWER ON</p>
+      <h1>KEEBTSIM<br><span>HER.</span></h1>
+      <p class="degree"><strong>Electrical Engineering Student</strong><br>University of Minnesota Duluth</p>
+      <p class="description">I'm building my understanding of engineering through electronics, programming, robotics, and hands-on projects.<br><br>This portfolio documents what I'm learning, building, and accomplishing as I develop as an engineer.</p>
       <div class="buttons">
-
-        <a
-          class="button"
-          href="https://github.com/keebtsimher-star"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GITHUB ↗
-        </a>
-
-
-        <a
-          class="button"
-          href="#projects"
-        >
-          VIEW PROJECTS ↓
-        </a>
-
+        <a class="button" href="https://github.com/keebtsimher-star" target="_blank" rel="noopener noreferrer">GITHUB ↗</a>
+        <a class="button" href="#projects">VIEW PROJECTS ↓</a>
       </div>
-
     </section>
-
-
-
-    <!-- CIRCUIT VISUAL -->
-
     <section class="circuit-area">
-
-      <div class="wire-horizontal"></div>
-
-      <div class="wire-vertical"></div>
-
-
-      <span
-        class="node node-left"
-      ></span>
-
-      <span
-        class="node node-right"
-      ></span>
-
-      <span
-        class="node node-top"
-      ></span>
-
-      <span
-        class="node node-bottom"
-      ></span>
-
-
-      <span
-        class="circuit-label label-one"
-      >
-        INPUT_01
-      </span>
-
-
-      <span
-        class="circuit-label label-two"
-      >
-        OUTPUT_01
-      </span>
-
-
-      <span
-        class="circuit-label label-three"
-      >
-        VCC
-      </span>
-
-
-      <div class="chip">
-
-        <div class="chip-content">
-
-          <p class="chip-code">
-            EE // 001
-          </p>
-
-          <h2>
-            ENGINEERING
-          </h2>
-
-          <p class="chip-status">
-            SIGNAL ACTIVE
-          </p>
-
-        </div>
-
-      </div>
-
+      <div class="wire-horizontal"></div><div class="wire-vertical"></div>
+      <span class="node node-left"></span><span class="node node-right"></span><span class="node node-top"></span><span class="node node-bottom"></span>
+      <span class="circuit-label label-one">INPUT_01</span><span class="circuit-label label-two">OUTPUT_01</span><span class="circuit-label label-three">VCC</span>
+      <div class="chip"><div class="chip-content"><p class="chip-code">EE // 001</p><h2>ENGINEERING</h2><p class="chip-status">SIGNAL ACTIVE</p></div></div>
     </section>
-
   </main>
 
-
-
-  <!-- =====================================================
-       02 / PROJECTS
-       ===================================================== -->
-
-  <section
-    class="projects"
-    id="projects"
-  >
-
-    <div class="projects-header">
-
-      <p class="section-label">
-        02 / PROTOTYPE
-      </p>
-
-
-      <h2 class="section-heading">
-        SELECTED
-        <span>PROJECTS.</span>
-      </h2>
-
-
-      <p class="section-intro">
-        A growing collection of engineering,
-        programming, and technical projects
-        documenting what I'm building and learning.
-      </p>
-
-    </div>
-
-
-
+  <section class="projects" id="projects">
+    <div class="projects-header"><p class="section-label">02 / PROTOTYPE</p><h2 class="section-heading">SELECTED <span>PROJECTS.</span></h2><p class="section-intro">A growing collection of engineering, programming, and technical projects documenting what I'm building and learning.</p></div>
     <div class="project-grid">
-
-
-      <!-- PROJECT 001 -->
-
       <article class="project-card">
-
-        <div class="project-top">
-
-          <span class="project-number">
-            PROJECT // 001
-          </span>
-
-          <span class="project-status">
-            ● IN PROGRESS
-          </span>
-
-        </div>
-
-
-        <h3>
-          Personal Engineering Portfolio
-        </h3>
-
-
-        <p class="project-description">
-          Designed and developed a responsive personal
-          engineering portfolio to document projects,
-          experience, achievements, and technical growth
-          throughout my electrical engineering education.
-        </p>
-
-
-        <div class="project-tags">
-
-          <span class="tag">
-            HTML
-          </span>
-
-          <span class="tag">
-            CSS
-          </span>
-
-          <span class="tag">
-            GITHUB
-          </span>
-
-          <span class="tag">
-            GITHUB PAGES
-          </span>
-
-        </div>
-
-
-        <a
-          class="project-link"
-          href="https://github.com/keebtsimher-star/PROJECT-EE"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          VIEW CODE ↗
-        </a>
-
+        <div class="project-top"><span class="project-number">PROJECT // 001</span><span class="project-status">● IN PROGRESS</span></div>
+        <h3>Personal Engineering Portfolio</h3>
+        <p class="project-description">Designed and developed a responsive personal engineering portfolio to document projects, experience, achievements, and technical growth throughout my electrical engineering education.</p>
+        <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">GITHUB</span><span class="tag">GITHUB PAGES</span></div>
+        <a class="project-link" href="https://github.com/keebtsimher-star/PROJECT-EE" target="_blank" rel="noopener noreferrer">VIEW CODE ↗</a>
       </article>
-
-
-
-      <!-- PROJECT 002 PLACEHOLDER -->
-
       <article class="project-card future">
-
-        <div class="project-top">
-
-          <span class="project-number">
-            PROJECT // 002
-          </span>
-
-          <span class="project-number">
-            SIGNAL PENDING
-          </span>
-
-        </div>
-
-
-        <h3>
-          Next Project Loading...
-        </h3>
-
-
-        <p class="project-description">
-          This slot is reserved for the next
-          engineering project.
-        </p>
-
-
-        <div class="project-tags">
-
-          <span class="tag">
-            COMING SOON
-          </span>
-
-        </div>
-
+        <div class="project-top"><span class="project-number">PROJECT // 002</span><span class="project-number">SIGNAL PENDING</span></div>
+        <h3>Next Project Loading...</h3><p class="project-description">This slot is reserved for the next engineering project.</p>
+        <div class="project-tags"><span class="tag">COMING SOON</span></div>
       </article>
-
-
     </div>
-
   </section>
 
-
-
-  <!-- =====================================================
-       03 / EXPERIENCE
-       ===================================================== -->
-
-  <section
-    class="experience"
-    id="experience"
-  >
-
-    <div class="experience-header">
-
-      <p class="section-label">
-        03 / FIELD TEST
-      </p>
-
-
-      <h2 class="section-heading">
-        EXPERIENCE<span>.</span>
-      </h2>
-
-
-      <p class="section-intro">
-        Hands-on experience across robotics,
-        manufacturing, programming, teamwork,
-        and fast-paced work environments.
-      </p>
-
-    </div>
-
-
-
+  <section class="experience" id="experience">
+    <div class="experience-header"><p class="section-label">03 / FIELD TEST</p><h2 class="section-heading">EXPERIENCE<span>.</span></h2><p class="section-intro">Hands-on experience across robotics, manufacturing, programming, teamwork, and fast-paced work environments.</p></div>
     <div class="experience-grid">
-
-
-      <!-- EXPERIENCE 001 -->
-
       <article class="experience-card featured">
-
-        <div class="experience-top">
-
-          <span class="experience-number">
-            EXPERIENCE // 001
-          </span>
-
-          <span class="experience-date">
-            FIRST ROBOTICS
-          </span>
-
-        </div>
-
-
-        <h3>
-          Build &amp; Programming Team
-        </h3>
-
-
-        <p class="experience-company">
-          FIRST ROBOTICS COMPETITION 7849
-          // DAVINCI'S CREATION
-        </p>
-
-
-        <p class="experience-description">
-          Contributed to the design and physical
-          build of the competition robot, including
-          discussions around how the robot should
-          function. Participated in both build and
-          programming efforts, using Python and
-          GitHub to work with existing code needed
-          for competition.
-        </p>
-
-
-        <div class="experience-tags">
-
-          <span class="experience-tag">
-            ROBOTICS
-          </span>
-
-          <span class="experience-tag">
-            PYTHON
-          </span>
-
-          <span class="experience-tag">
-            GITHUB
-          </span>
-
-          <span class="experience-tag">
-            BUILD
-          </span>
-
-          <span class="experience-tag">
-            TEAMWORK
-          </span>
-
-        </div>
-
+        <div class="experience-top"><span class="experience-number">EXPERIENCE // 001</span><span class="experience-date">FIRST ROBOTICS</span></div>
+        <h3>Build &amp; Programming Team</h3><p class="experience-company">FIRST ROBOTICS COMPETITION 7849 // DAVINCI'S CREATION</p>
+        <p class="experience-description">Contributed to the design and physical build of the competition robot, including discussions around how the robot should function. Participated in both build and programming efforts, using Python and GitHub to work with existing code needed for competition.</p>
+        <div class="experience-tags"><span class="experience-tag">ROBOTICS</span><span class="experience-tag">PYTHON</span><span class="experience-tag">GITHUB</span><span class="experience-tag">BUILD</span><span class="experience-tag">TEAMWORK</span></div>
       </article>
-
-
-
-      <!-- EXPERIENCE 002 -->
-
       <article class="experience-card">
-
-        <div class="experience-top">
-
-          <span class="experience-number">
-            EXPERIENCE // 002
-          </span>
-
-          <span class="experience-date">
-            JUN 2026 // SEP 2026
-          </span>
-
-        </div>
-
-
-        <h3>
-          Manufacturer
-        </h3>
-
-
-        <p class="experience-company">
-          P&amp;M TRUSS INC.
-        </p>
-
-
-        <p class="experience-description">
-          Manufactured truss assemblies in a
-          fast-paced production environment while
-          reading technical blueprints and verifying
-          component specifications. Worked with a
-          team of 10+ workers to meet production
-          targets while maintaining accuracy and
-          following workplace safety procedures.
-        </p>
-
-
-        <div class="experience-tags">
-
-          <span class="experience-tag">
-            BLUEPRINTS
-          </span>
-
-          <span class="experience-tag">
-            MANUFACTURING
-          </span>
-
-          <span class="experience-tag">
-            TEAMWORK
-          </span>
-
-          <span class="experience-tag">
-            QUALITY
-          </span>
-
-          <span class="experience-tag">
-            SAFETY
-          </span>
-
-        </div>
-
+        <div class="experience-top"><span class="experience-number">EXPERIENCE // 002</span><span class="experience-date">JUN 2026 // SEP 2026</span></div>
+        <h3>Manufacturer</h3><p class="experience-company">P&amp;M TRUSS INC.</p>
+        <p class="experience-description">Manufactured truss assemblies in a fast-paced production environment while reading technical blueprints and verifying component specifications. Worked with a team of 10+ workers to meet production targets while maintaining accuracy and following workplace safety procedures.</p>
+        <div class="experience-tags"><span class="experience-tag">BLUEPRINTS</span><span class="experience-tag">MANUFACTURING</span><span class="experience-tag">TEAMWORK</span><span class="experience-tag">QUALITY</span><span class="experience-tag">SAFETY</span></div>
       </article>
-
-
-
-      <!-- EXPERIENCE 003 -->
-
       <article class="experience-card">
-
-        <div class="experience-top">
-
-          <span class="experience-number">
-            EXPERIENCE // 003
-          </span>
-
-          <span class="experience-date">
-            OCT 2025 // JUN 2026
-          </span>
-
-        </div>
-
-
-        <h3>
-          Sandwich Artist
-        </h3>
-
-
-        <p class="experience-company">
-          SUBWAY
-        </p>
-
-
-        <p class="experience-description">
-          Worked in a high-volume customer service
-          environment serving 100+ customers daily
-          while maintaining station organization
-          and communicating with team members
-          during peak periods.
-        </p>
-
-
-        <div class="experience-tags">
-
-          <span class="experience-tag">
-            COMMUNICATION
-          </span>
-
-          <span class="experience-tag">
-            CUSTOMER SERVICE
-          </span>
-
-          <span class="experience-tag">
-            TEAMWORK
-          </span>
-
-        </div>
-
+        <div class="experience-top"><span class="experience-number">EXPERIENCE // 003</span><span class="experience-date">OCT 2025 // JUN 2026</span></div>
+        <h3>Sandwich Artist</h3><p class="experience-company">SUBWAY</p>
+        <p class="experience-description">Worked in a high-volume customer service environment serving 100+ customers daily while maintaining station organization and communicating with team members during peak periods.</p>
+        <div class="experience-tags"><span class="experience-tag">COMMUNICATION</span><span class="experience-tag">CUSTOMER SERVICE</span><span class="experience-tag">TEAMWORK</span></div>
       </article>
-
-
     </div>
-
   </section>
 
-<!-- =====================================================
-     04 / SYSTEM LOG
-     ===================================================== -->
+  <section class="achievements" id="achievements">
+    <div class="achievements-header"><p class="section-label">04 / SYSTEM LOG</p><h2 class="section-heading">ACHIEVEMENT <span>LOG.</span></h2><p class="section-intro">A running record of academic, technical, and personal milestones throughout my development as an engineer.</p></div>
+    <div class="timeline">
+      <article class="timeline-item"><span class="timeline-node"></span><div class="timeline-year">2025–2026</div><div class="timeline-content"><p class="timeline-code">LOG // 001</p><h3>National Honor Society</h3><p>Participated in National Honor Society during high school, representing a milestone in academic achievement, service, and involvement.</p></div></article>
+      <article class="timeline-item"><span class="timeline-node"></span><div class="timeline-year">2026</div><div class="timeline-content"><p class="timeline-code">LOG // 002</p><h3>Began Electrical Engineering</h3><p>Began studying Electrical Engineering at the University of Minnesota Duluth, starting the next stage of my engineering education.</p></div></article>
+      <article class="timeline-item"><span class="timeline-node"></span><div class="timeline-year">2026</div><div class="timeline-content"><p class="timeline-code">LOG // 003</p><h3>Engineering Portfolio Launched</h3><p>Designed, built, and deployed a personal engineering portfolio using HTML, CSS, GitHub, and GitHub Pages to document my technical development throughout college.</p></div></article>
+      <article class="timeline-item pending"><span class="timeline-node"></span><div class="timeline-year">NEXT</div><div class="timeline-content"><p class="timeline-code">LOG // 004</p><h3>Signal Pending...</h3><p>Next milestone awaiting transmission.</p></div></article>
+    </div>
+  </section>
 
-<section
-  class="achievements"
-  id="achievements"
->
+  <section class="skills" id="skills">
+    <div class="skills-header"><p class="section-label">05 / COMPONENTS</p><h2 class="section-heading">TECHNICAL <span>TOOLKIT.</span></h2><p class="section-intro">Tools and technical skills I've used through coursework, projects, robotics, manufacturing, and independent learning.</p></div>
+    <div class="component-grid">
+      <article class="component-card"><p class="component-number">COMPONENT // 001</p><h3>Python</h3><p class="component-category">PROGRAMMING</p><p class="component-description">Used for programming coursework and introductory robotics programming, including work with functions, lists, structured data, and existing competition code.</p><div class="component-signal"><span class="component-light"></span>ACTIVE</div></article>
+      <article class="component-card"><p class="component-number">COMPONENT // 002</p><h3>HTML &amp; CSS</h3><p class="component-category">WEB DEVELOPMENT</p><p class="component-description">Used to design and develop this engineering portfolio, including responsive layouts, styling, navigation, grids, and animations.</p><div class="component-signal"><span class="component-light"></span>ACTIVE</div></article>
+      <article class="component-card"><p class="component-number">COMPONENT // 003</p><h3>GitHub</h3><p class="component-category">VERSION CONTROL / DEPLOYMENT</p><p class="component-description">Used to manage project files, work with existing robotics code, track portfolio development, and publish this website through GitHub Pages.</p><div class="component-signal"><span class="component-light"></span>ACTIVE</div></article>
+      <article class="component-card"><p class="component-number">COMPONENT // 004</p><h3>Blueprint Reading</h3><p class="component-category">MANUFACTURING</p><p class="component-description">Applied technical blueprint interpretation during truss manufacturing to identify component requirements and support accurate assembly.</p><div class="component-signal"><span class="component-light"></span>ACTIVE</div></article>
+      <article class="component-card"><p class="component-number">COMPONENT // 005</p><h3>Robotics Build</h3><p class="component-category">HANDS-ON ENGINEERING</p><p class="component-description">Contributed to robot construction and discussions around overall robot functionality as part of FIRST Robotics Competition Team 7849.</p><div class="component-signal"><span class="component-light"></span>ACTIVE</div></article>
+      <article class="component-card"><p class="component-number">COMPONENT // 006</p><h3>Microsoft Office</h3><p class="component-category">PRODUCTIVITY</p><p class="component-description">Used for academic work, documentation, presentations, organization, and general productivity.</p><div class="component-signal"><span class="component-light"></span>ACTIVE</div></article>
+    </div>
+  </section>
 
-  <div class="achievements-header">
-
-    <p class="section-label">
-      04 / SYSTEM LOG
-    </p>
-
-    <h2 class="section-heading">
-      ACHIEVEMENT
-      <span>LOG.</span>
-    </h2>
-
-    <p class="section-intro">
-      A running record of academic,
-      technical, and personal milestones
-      throughout my development as an engineer.
-    </p>
-
-  </div>
-
-
-  <div class="timeline">
-
-
-    <!-- LOG 001 -->
-
-    <article class="timeline-item">
-
-      <span class="timeline-node"></span>
-
-      <div class="timeline-year">
-        2025–2026
-      </div>
-
-      <div class="timeline-content">
-
-        <p class="timeline-code">
-          LOG // 001
-        </p>
-
-        <h3>
-          National Honor Society
-        </h3>
-
-        <p>
-          Participated in National Honor Society
-          during high school, representing a milestone
-          in academic achievement, service, and
-          involvement.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- LOG 002 -->
-
-    <article class="timeline-item">
-
-      <span class="timeline-node"></span>
-
-      <div class="timeline-year">
-        2026
-      </div>
-
-      <div class="timeline-content">
-
-        <p class="timeline-code">
-          LOG // 002
-        </p>
-
-        <h3>
-          Began Electrical Engineering
-        </h3>
-
-        <p>
-          Began studying Electrical Engineering
-          at the University of Minnesota Duluth,
-          starting the next stage of my engineering
-          education.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- LOG 003 -->
-
-    <article class="timeline-item">
-
-      <span class="timeline-node"></span>
-
-      <div class="timeline-year">
-        2026
-      </div>
-
-      <div class="timeline-content">
-
-        <p class="timeline-code">
-          LOG // 003
-        </p>
-
-        <h3>
-          Engineering Portfolio Launched
-        </h3>
-
-        <p>
-          Designed, built, and deployed a personal
-          engineering portfolio using HTML, CSS,
-          GitHub, and GitHub Pages to document my
-          technical development throughout college.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- FUTURE LOG -->
-
-    <article class="timeline-item pending">
-
-      <span class="timeline-node"></span>
-
-      <div class="timeline-year">
-        NEXT
-      </div>
-
-      <div class="timeline-content">
-
-        <p class="timeline-code">
-          LOG // 004
-        </p>
-
-        <h3>
-          Signal Pending...
-        </h3>
-
-        <p>
-          Next milestone awaiting transmission.
-        </p>
-
-      </div>
-
-    </article>
-
-
-  </div>
-
-</section>
-
-  <!-- =====================================================
-       STATUS BAR
-       ===================================================== -->
-
-  <footer
-    class="status-bar"
-    id="contact"
-  >
-
-    <span>
-      DULUTH, MN
-    </span>
-
-    <span class="online">
-      ● SYSTEM ONLINE
-    </span>
-
-    <span>
-      MORE SYSTEMS COMING ONLINE...
-    </span>
-
-  </footer>
-
-
+  <footer class="status-bar" id="contact"><span>DULUTH, MN</span><span class="online">● SYSTEM ONLINE</span><span>MORE SYSTEMS COMING ONLINE...</span></footer>
 </body>
-
 </html>
