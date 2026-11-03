@@ -236,4 +236,483 @@
     }
 
 
-    /*
+    /* horizontal wire */
+
+    .wire-horizontal {
+      position: absolute;
+
+      width: 90%;
+      height: 1px;
+
+      background: #315d47;
+    }
+
+
+    /* vertical wire */
+
+    .wire-vertical {
+      position: absolute;
+
+      width: 1px;
+      height: 90%;
+
+      background: #315d47;
+    }
+
+
+    /* processor */
+
+    .chip {
+      position: relative;
+
+      z-index: 3;
+
+      width: 230px;
+      height: 230px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border: 2px solid #56f59b;
+
+      background: #0a1510;
+
+      box-shadow:
+        0 0 30px rgba(86, 245, 155, 0.12),
+        inset 0 0 40px rgba(86, 245, 155, 0.04);
+    }
+
+
+    /* little chip pins */
+
+    .chip::before {
+      content: "";
+
+      position: absolute;
+
+      width: 260px;
+      height: 260px;
+
+      border:
+        1px dashed
+        rgba(86, 245, 155, 0.22);
+    }
+
+    .chip-content {
+      text-align: center;
+
+      z-index: 5;
+    }
+
+    .chip-code {
+      margin-bottom: 15px;
+
+      color: #56f59b;
+
+      font-size: 11px;
+
+      letter-spacing: 2px;
+    }
+
+    .chip h2 {
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 24px;
+
+      letter-spacing: 2px;
+    }
+
+    .chip-status {
+      margin-top: 12px;
+
+      color: #65766d;
+
+      font-size: 10px;
+
+      letter-spacing: 2px;
+    }
+
+
+    /* circuit nodes */
+
+    .node {
+      position: absolute;
+
+      z-index: 4;
+
+      width: 9px;
+      height: 9px;
+
+      background: #56f59b;
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 12px #56f59b;
+    }
+
+    .node-left {
+      left: 5%;
+      top: 50%;
+    }
+
+    .node-right {
+      right: 5%;
+      top: 50%;
+    }
+
+    .node-top {
+      top: 5%;
+      left: 50%;
+    }
+
+    .node-bottom {
+      bottom: 5%;
+      left: 50%;
+    }
+
+
+    /* labels around circuit */
+
+    .circuit-label {
+      position: absolute;
+
+      color: #405249;
+
+      font-size: 9px;
+
+      letter-spacing: 1px;
+    }
+
+    .label-one {
+      top: 43%;
+      left: 5%;
+    }
+
+    .label-two {
+      right: 5%;
+      top: 43%;
+    }
+
+    .label-three {
+      left: 52%;
+      top: 5%;
+    }
+
+
+    /* =========================
+       STATUS BAR
+       ========================= */
+
+    .status-bar {
+      width: 100%;
+
+      padding: 18px 8%;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      border-top: 1px solid #1d3027;
+
+      color: #53635a;
+
+      font-size: 10px;
+
+      letter-spacing: 1px;
+    }
+
+    .online {
+      color: #56f59b;
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+
+        padding:
+          60px
+          8%
+          20px;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+
+        letter-spacing: -3px;
+      }
+
+      .circuit-area {
+        height: 400px;
+      }
+
+      .chip {
+        width: 190px;
+        height: 190px;
+      }
+
+      .chip::before {
+        width: 215px;
+        height: 215px;
+      }
+
+      .status-bar {
+        gap: 15px;
+
+        flex-direction: column;
+
+        text-align: center;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =====================
+       NAVIGATION
+       ===================== -->
+
+  <nav>
+
+    <div class="logo">
+      KH<span>//EE</span>
+    </div>
+
+    <ul class="nav-links">
+
+      <li>
+        <a href="#about">
+          ABOUT
+        </a>
+      </li>
+
+      <li>
+        <a href="#projects">
+          PROJECTS
+        </a>
+      </li>
+
+      <li>
+        <a href="#experience">
+          EXPERIENCE
+        </a>
+      </li>
+
+      <li>
+        <a href="#contact">
+          CONTACT
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- =====================
+       LANDING PAGE
+       ===================== -->
+
+  <main
+    class="hero"
+    id="about"
+  >
+
+
+    <!-- LEFT SIDE -->
+
+    <section>
+
+      <p class="section-label">
+        01 / POWER ON
+      </p>
+
+
+      <h1>
+        KEEBTSIM
+        <br>
+        <span>HER.</span>
+      </h1>
+
+
+      <p class="degree">
+
+        <strong>
+          Electrical Engineering Student
+        </strong>
+
+        <br>
+
+        University of Minnesota Duluth
+
+      </p>
+
+
+      <p class="description">
+
+        I'm building my understanding of
+        engineering through electronics,
+        programming, robotics, and hands-on
+        projects.
+
+        <br><br>
+
+        This portfolio documents what I'm
+        learning, building, and accomplishing
+        as I develop as an engineer.
+
+      </p>
+
+
+      <div class="buttons">
+
+
+        <a
+          class="button"
+          href="https://github.com/keebtsimher-star"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GITHUB ↗
+        </a>
+
+
+        <a
+          class="button"
+          href="#projects"
+        >
+          VIEW PROJECTS ↓
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- RIGHT SIDE -->
+
+    <section class="circuit-area">
+
+
+      <div class="wire-horizontal"></div>
+
+      <div class="wire-vertical"></div>
+
+
+      <span
+        class="node node-left"
+      ></span>
+
+      <span
+        class="node node-right"
+      ></span>
+
+      <span
+        class="node node-top"
+      ></span>
+
+      <span
+        class="node node-bottom"
+      ></span>
+
+
+      <span
+        class="circuit-label label-one"
+      >
+        INPUT_01
+      </span>
+
+
+      <span
+        class="circuit-label label-two"
+      >
+        OUTPUT_01
+      </span>
+
+
+      <span
+        class="circuit-label label-three"
+      >
+        VCC
+      </span>
+
+
+
+      <div class="chip">
+
+        <div class="chip-content">
+
+
+          <p class="chip-code">
+            EE // 001
+          </p>
+
+
+          <h2>
+            ENGINEERING
+          </h2>
+
+
+          <p class="chip-status">
+            SIGNAL ACTIVE
+          </p>
+
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================
+       STATUS BAR
+       ===================== -->
+
+  <footer class="status-bar">
+
+    <span>
+      DULUTH, MN
+    </span>
+
+    <span class="online">
+      ● SYSTEM ONLINE
+    </span>
+
+    <span>
+      FOLLOW THE SIGNAL ↓
+    </span>
+
+  </footer>
+
+
+</body>
+
+</html>
